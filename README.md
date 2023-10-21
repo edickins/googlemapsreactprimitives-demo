@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+https://github.com/edickins/googlemapsreactprimitives-demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# example repository to demonstrate issue with googlemap-react-primitives app not rendering
 
-Currently, two official plugins are available:
+# components when example code is ported into a Vite project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I put the code from example.tsx into a MyMap component that is rendered by App.
+The MyMap component is inside src>components>googlemaps
 
-## Expanding the ESLint configuration
+# components not rendering on the map
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+to replicate bug:
 
-- Configure the top-level `parserOptions` property like this:
+- download repo
+- run npm install
+- run npm run dev to launch app
+- notice that the map renders but without markers or overlay
+- go to MyMap line 57 and comment out the s being rendered
+- notice how other map components render through HMR soft re-render
+- uncomment the code
+- notice the s render.
+- refresh the page and notice that all map components no-longer render
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+# render without React.Strictmode fixes the bug
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To remove the React.Strict mode go to Main and remove the <React.StrictMode></React.StrictMode> wrapper around
+
+- re-run the app (npm run dev)
+- Notice that all components render correctly as expected over the map.
+- refresh the page and notice components are still rendering correctly.
