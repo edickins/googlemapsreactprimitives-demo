@@ -16,7 +16,7 @@ to replicate bug:
 - go to MyMap line 57 and comment out the s being rendered
 - notice how other map components render through HMR soft re-render
 - uncomment the code
-- notice the s render.
+- notice the components now render.
 - refresh the page and notice that all map components no-longer render
 
 # render without React.Strictmode fixes the bug
