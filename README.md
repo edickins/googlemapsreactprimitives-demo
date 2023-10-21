@@ -1,8 +1,6 @@
 https://github.com/edickins/googlemapsreactprimitives-demo
 
-# example repository to demonstrate issue with googlemap-react-primitives app not rendering
-
-# components when example code is ported into a Vite project
+# example repository to demonstrate issue with googlemap-react-primitives app not rendering components when example code is ported into a Vite project
 
 I put the code from example.tsx into a MyMap component that is rendered by App.
 The MyMap component is inside src>components>googlemaps
