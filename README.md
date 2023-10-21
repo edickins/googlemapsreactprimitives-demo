@@ -13,7 +13,7 @@ to replicate bug:
 - run npm install
 - run npm run dev to launch app
 - notice that the map renders but without markers or overlay
-- go to MyMap line 57 and comment out the s being rendered
+- go to MyMap line 57 and comment out the Markers being rendered
 - notice how other map components render through HMR soft re-render
 - uncomment the code
 - notice the components now render.
@@ -21,7 +21,7 @@ to replicate bug:
 
 # render without React.Strictmode fixes the bug
 
-To remove the React.Strict mode go to Main and remove the <React.StrictMode></React.StrictMode> wrapper around
+To remove the React.Strict mode go to Main and remove the <React.StrictMode></React.StrictMode> wrapper around App
 
 - re-run the app (npm run dev)
 - Notice that all components render correctly as expected over the map.
